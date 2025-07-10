@@ -1,0 +1,38 @@
+{
+  "name": "react-library",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "Tufan Butuner <43154254+tufanbutuner@users.noreply.github.com>",
+  "homepage": "https://github.com/tufanbutuner/wc-monorepo#readme",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "module": "lib/index.js",
+  "types": "dist/types/index.d.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "dist",
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tufanbutuner/wc-monorepo.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/react-library.test.js",
+    "build": "npm run tsc",
+    "tsc": "tsc -p . --outDir ./dist"
+  },
+  "bugs": {
+    "url": "https://github.com/tufanbutuner/wc-monorepo/issues"
+  },
+  "dependencies": {
+    "@stencil/react-output-target": "^1.2.0",
+    "stencil-library": "*"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "packages/stencil-library",
+    "packages/react-library"
+  ],
+  "devDependencies": {
+    "@types/node": "^24.0.13",
+    "lerna": "^8.2.3",
+    "typescript": "^5.8.3"
+  }
+}
