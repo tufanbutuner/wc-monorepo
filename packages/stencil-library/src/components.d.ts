@@ -7,18 +7,19 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface MyComponent {
-        /**
-          * The first name
-         */
         "first": string;
-        /**
-          * The last name
-         */
         "last": string;
-        /**
-          * The middle name
-         */
         "middle": string;
+    }
+    interface StatusTag {
+        /**
+          * @default 'not-started'
+         */
+        "status": 'completed' | 'in-progress' | 'not-started' | 'cancelled';
+        /**
+          * @default 'Not started'
+         */
+        "text": string;
     }
 }
 declare global {
@@ -28,27 +29,36 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLStatusTagElement extends Components.StatusTag, HTMLStencilElement {
+    }
+    var HTMLStatusTagElement: {
+        prototype: HTMLStatusTagElement;
+        new (): HTMLStatusTagElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
+        "status-tag": HTMLStatusTagElement;
     }
 }
 declare namespace LocalJSX {
     interface MyComponent {
-        /**
-          * The first name
-         */
         "first"?: string;
-        /**
-          * The last name
-         */
         "last"?: string;
-        /**
-          * The middle name
-         */
         "middle"?: string;
+    }
+    interface StatusTag {
+        /**
+          * @default 'not-started'
+         */
+        "status"?: 'completed' | 'in-progress' | 'not-started' | 'cancelled';
+        /**
+          * @default 'Not started'
+         */
+        "text"?: string;
     }
     interface IntrinsicElements {
         "my-component": MyComponent;
+        "status-tag": StatusTag;
     }
 }
 export { LocalJSX as JSX };
@@ -56,6 +66,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "status-tag": LocalJSX.StatusTag & JSXBase.HTMLAttributes<HTMLStatusTagElement>;
         }
     }
 }

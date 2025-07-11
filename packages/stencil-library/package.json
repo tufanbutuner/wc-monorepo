@@ -18,9 +18,17 @@
       "types": "./dist/components/my-component.d.ts"
     },
     "./dist/components/my-component.js": {
-    "import": "./dist/components/my-component.js",
-    "types": "./dist/components/my-component.d.ts"
-  },
+      "import": "./dist/components/my-component.js",
+      "types": "./dist/components/my-component.d.ts"
+    },
+    "./status-tag": {
+      "import": "./dist/components/status-tag.js",
+      "types": "./dist/components/status-tag.d.ts"
+    },
+    "./dist/components/status-tag.js": {
+      "import": "./dist/components/status-tag.js",
+      "types": "./dist/components/status-tag.d.ts"
+    },
     "./loader": {
       "import": "./loader/index.js",
       "require": "./loader/index.cjs",

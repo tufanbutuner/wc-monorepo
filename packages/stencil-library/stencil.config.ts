@@ -1,7 +1,6 @@
 import { Config } from '@stencil/core';
 import { reactOutputTarget } from '@stencil/react-output-target';
 
-
 export const config: Config = {
   namespace: 'stencil-library',
   outputTargets: [
@@ -23,12 +22,12 @@ export const config: Config = {
     },
     reactOutputTarget({
       // Relative path to where the React components will be generated
-      outDir: '../react-library/lib/components/stencil-generated/',
+      outDir: '../react-library/lib/components/stencil-generated/index.ts',
     }),
     // dist-custom-elements output target is required for the React output target
     { type: 'dist-custom-elements' },
   ],
   testing: {
-    browserHeadless: "shell",
+    browserHeadless: 'shell',
   },
 };

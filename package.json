@@ -2,10 +2,16 @@
   "name": "root",
   "private": true,
   "workspaces": [
-    "packages/*",
-    "packages/stencil-library",
-    "packages/react-library"
+    "packages/*"
   ],
+  "scripts": {
+    "build": "npm run build:stencil && npm run build:react",
+    "build:stencil": "npm run build --workspace=stencil-library",
+    "build:react": "npm run build --workspace=react-library",
+    "build:all": "npm run build --workspaces --if-present",
+    "clean": "npm run clean --workspaces --if-present",
+    "install:all": "npm install --workspaces"
+  },
   "devDependencies": {
     "@types/node": "^24.0.13",
     "lerna": "^8.2.3",
