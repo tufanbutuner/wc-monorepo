@@ -1,11 +1,11 @@
 import "./App.css";
-import { MyComponent, StatusTag } from "react-library";
+import "./components/StatusTagComponent/StatusTagComponent";
 
 function App() {
   return (
     <div className="App">
-      <MyComponent first="Your" last="Name" />
-      <StatusTag status="completed" text="Task Completed" />
+      {/* @ts-ignore */}
+      <status-tag status="Renamed"></status-tag>
     </div>
   );
 }
